@@ -1,20 +1,17 @@
 <?php
-session_start();
-$heroname = $_SESSION["heroName"];
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["choice"]) && !empty($_GET["choice"])) {
         $choix_arme = $_GET["choice"];
         var_dump($choix_arme); 
 
-        if ($choix_arme == "Epée") {
-            header("Location: choice_epee.phtml");
+        if ("choice-1") {
+            header("Location: archer_1_1.phtml");
             exit();
-        } elseif ($choix_arme == "Arc") {
-            header("Location: choice_arc.phtml");
+        } elseif ("choice-2") {
+            header("Location: archer_2_2.phtml");
             exit();
-        } elseif ($choix_arme == "Potion") {
-            header("Location: choice_potion.phtml");
+        } elseif ("choice-3") {
+            header("Location: archer_3_3.phtml");
             exit();
         }
     }
@@ -36,20 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <body id="choice">
 <main>
     <section>
-        <h2>Bonjour valeureux héro <?php echo $heroname; ?></h2>
+        <h2>Plus malin que vous en avez l'air, hein !</h2>
         <div>
             <form method="get" action="">
                 <div>
-                    <input type="radio" id="choice-1" name="choice" value="Epee">
-                    <label for="choice-1">Epée</label>
+                    <input type="radio" id="choice-1" name="choice" value="choice-1">
+                    <label for="choice-1">J'arme mon tir et essaie de visé le barreau pour le casser.</label>
                 </div>
                 <div>
-                    <input type="radio" id="" name="choice" value="Arc">
-                    <label for="choice-2">Arc</label>
+                    <input type="radio" id="choice-2" name="choice" value="choice-2">
+                    <label for="choice-1">Je prends mon temps, je regarde attentivement autour de moi .</label>
                 </div>
                 <div>
-                    <input type="radio" id="choice-3" name="choice" value="Potion">
-                    <label for="choice-3">Potion (attention)</label>
+                    <input type="radio" id="choice-3" name="choice" value="choice-3">
+                    <label for="choice-1">Je gratte le barreau avec l'espoir de finir le travail.</label>
                 </div>
                 <div>
                     <input type="submit" value="Valider le choix" />
@@ -59,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </section>
     <section>
         <section>
-            <img src="assets/img/door.png" />
-            <h1>Vous vous trouvez dans un prison, seul. Vous observez devant vous trois objet que vous avez du mal à discerner. Vous vous approchez. Vous voyez une <span>épée</span>, <span>un arc</span>, et une <span>potion</span> de couleur bleu. Vous ne pouvez en choisir qu'un. Que décidez vous de choisir ?</h1>
+            <img src="assets/img/bow.png" />
+            <h1>Vous decouvrez en vous retournant un barreau fêlé. Vous apercevez juste derrière, un carquant rempli de flèches. L'arc à la main, que décidez vous de faire ?</h1>
         </section>
     </section>
 </main>

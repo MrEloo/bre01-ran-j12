@@ -1,7 +1,12 @@
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $name = $_GET["heroName"];
-    echo "Vous vous appelez $name";
+    if (isset($_GET["heroName"]) && !empty($_GET["heroName"])) {
+        $_SESSION["heroName"] = $_GET["heroName"];
+        header("Location: choice.phtml");
+        echo $heroname;
+        exit();
+    }
 }
 ?>
 

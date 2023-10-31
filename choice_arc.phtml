@@ -1,7 +1,4 @@
 <?php
-session_start();
-$heroname = $_SESSION["heroName"];
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["choice"]) && !empty($_GET["choice"])) {
         $choix_arme = $_GET["choice"];
@@ -36,20 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <body id="choice">
 <main>
     <section>
-        <h2>Bonjour valeureux héro <?php echo $heroname; ?></h2>
+        <h2>Une âme d'acher, alors ? Allez vous en faire bon usage ?</h2>
         <div>
             <form method="get" action="">
                 <div>
-                    <input type="radio" id="choice-1" name="choice" value="Epee">
-                    <label for="choice-1">Epée</label>
+                    <input type="radio" id="choice-1" name="choice" value="choice-1">
+                    <label for="choice-1">J'essaie tant bien que mal de récuperer les flèches en utilisant mon arc</label>
                 </div>
                 <div>
-                    <input type="radio" id="" name="choice" value="Arc">
-                    <label for="choice-2">Arc</label>
+                    <input type="radio" id="choice-2" name="choice" value="choice-2">
+                    <label for="choice-1">J'empoigne fermement mon arc et je mattraque le barreau.</label>
                 </div>
                 <div>
-                    <input type="radio" id="choice-3" name="choice" value="Potion">
-                    <label for="choice-3">Potion (attention)</label>
+                    <input type="radio" id="choice-3" name="choice" value="choice-3">
+                    <label for="choice-1">Impossible, je change d'arme.</label>
                 </div>
                 <div>
                     <input type="submit" value="Valider le choix" />
@@ -59,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </section>
     <section>
         <section>
-            <img src="assets/img/door.png" />
-            <h1>Vous vous trouvez dans un prison, seul. Vous observez devant vous trois objet que vous avez du mal à discerner. Vous vous approchez. Vous voyez une <span>épée</span>, <span>un arc</span>, et une <span>potion</span> de couleur bleu. Vous ne pouvez en choisir qu'un. Que décidez vous de choisir ?</h1>
+            <img src="assets/img/bow.png" />
+            <h1>Vous decouvrez en vous retournant un barreau fêlé. Vous apercevez juste derrière, un carquant rempli de flèches. L'arc à la main, que décidez vous de faire ?</h1>
         </section>
     </section>
 </main>

@@ -1,24 +1,6 @@
 <?php
 session_start();
 $heroname = $_SESSION["heroName"];
-
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET["choice"]) && !empty($_GET["choice"])) {
-        $choix_arme = $_GET["choice"];
-        var_dump($choix_arme); 
-
-        if ($choix_arme == "Epée") {
-            header("Location: choice_epee.phtml");
-            exit();
-        } elseif ($choix_arme == "Arc") {
-            header("Location: choice_arc.phtml");
-            exit();
-        } elseif ($choix_arme == "Potion") {
-            header("Location: choice_potion.phtml");
-            exit();
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <div>
             <form method="get" action="">
                 <div>
-                    <input type="radio" id="choice-1" name="choice" value="Epee">
+                    <input type="radio" id="choice-1" name="choice" value="choice-1">
                     <label for="choice-1">Epée</label>
                 </div>
                 <div>
-                    <input type="radio" id="" name="choice" value="Arc">
-                    <label for="choice-2">Arc</label>
+                    <input type="radio" id="choice-2" name="choice" value="choice-2">
+                    <label for="choice-1">Arc</label>
                 </div>
                 <div>
-                    <input type="radio" id="choice-3" name="choice" value="Potion">
-                    <label for="choice-3">Potion (attention)</label>
+                    <input type="radio" id="choice-3" name="choice" value="choice-3">
+                    <label for="choice-1">Potion (attention)</label>
                 </div>
                 <div>
                     <input type="submit" value="Valider le choix" />
